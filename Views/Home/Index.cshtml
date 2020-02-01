@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<style>
+
+</style>
+    <div class="text-center text-dark">
+        <br />
+        <br />
+        <img id="img" src="~/file/bobo.jpg" alt="#" width="200" height="150" style="border:1px solid white;border-radius:50%; margin:10px;" />
+       
+  
+        <h1 class="display-4 font-weight-bold">Hi</h1>
+        <h1 class="display-4 font-weight-bold">I am Zihong Qu</h1>
+        <br />
+        <div class="row">
+            <div class="col-2 offset-4 border-right border-dark">
+                <img src="~/file/github.jpg" alt="#" width="40" height="40" style="border-radius:50%;border-color:white" />
+                <p>Find me on <a href="https://github.com/ZihongQu">Github</a></p>
+
+            </div>
+            <div class="col-2">
+                <img src="~/file/linkedin.jpg" alt="#" width="40" height="40" style="border-radius:50%;border-color:white" />
+                <p id="linkedin">Find me on <a href="#" title="oops! Not ready yet">LinkedIn</a></p>
+            </div>
+
+        </div>
+        <div>
+            <p>Email: zihongqu@gmail.com</p>
+            <p>Latest Resume: <a href="~/file/cv-zihong.pdf" download>Resume</a></p>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script>
+            $("#linkedin").click(function () {
+                alert("Oops! Link not ready yet");
+            })
+        </script>
+    </div>

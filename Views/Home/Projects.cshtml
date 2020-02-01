@@ -1,0 +1,111 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+}
+
+<style>
+    .content {
+        background-color: rgba(139,125,107,0.3);
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .tab {
+        width: 100%;
+        border: 1px solid #000;
+        overflow: hidden;
+        background-color: #ddd;
+        position: center;
+    }
+
+        .tab:hover {
+            cursor: pointer;
+        }
+
+        .tab li {
+            height: 30px;
+            line-height: 30px;
+            width: 33%;
+            float: left;
+            text-align: center;
+            font-family: 'Lucida Handwriting';
+        }
+
+        .tab .act {
+            height: 28px;
+            line-height: 28px;
+            border-top: 3px solid orange;
+            background-color: rgba(0,0,0,0.9);
+            color: white;
+        }
+
+    .con {
+        width: 100%;
+        border: 1px solid #000;
+        height: 500px;
+    }
+
+        .con li {
+            height: 100%;
+            display: none;
+            text-align: center;
+            line-height: 30px;
+            font-size: 18px;
+            font-family: 'Lucida Bright';
+        }
+
+        .con .show {
+            display: block;
+        }
+</style>
+<div class="text-center text-dark">
+    <br />
+    <br />
+    <img src="~/file/bobo.jpg" alt="#" width="200" height="150" style="border:1px solid white;border-radius:50%; margin:10px" />
+    <div class="row">
+        <div class="col-8 offset-2 content">
+            <br />
+            <ul class="tab">
+
+                <li>Web Applications</li>
+
+                <li class="act">Desktop Applications</li>
+
+                <li>Mobile Applications</li>
+
+            </ul>
+
+            <ul class="con">
+
+                <li><p><br /><br />To be updated...</p></li>
+
+                <li class="show">
+                    <p>
+                        <br /><br />
+                        Train Ticket Booking App<br /><a href="https://github.com/ZihongQu/TrainTicket">https://github.com/ZihongQu/TrainTicket</a><br />
+                        Asset Management Assignment<br /><a href="https://github.com/ZihongQu/Asset-Management-Assignment">https://github.com/ZihongQu/Asset-Management-Assignment</a>
+                    </p>
+                </li>
+
+                <li><p><br /><br />To be Updated...</p></li>
+
+            </ul>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+
+        $(".tab li").click(function () {
+            var index = $(this).index();
+
+            $(this).addClass("act").siblings().removeClass("act");
+
+            // con栏的切换
+
+            $(".con li").eq(index).addClass("show").siblings().removeClass("show");
+        })
+    </script>
+</div>

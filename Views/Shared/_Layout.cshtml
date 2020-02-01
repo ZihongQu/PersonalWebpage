@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Zihong Qu's Personal Website</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        #form1 {
+            background-image: url('/file/d.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            background-color: gray;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: rgba(245, 171, 53, 0.5)
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover {
+            background-color: rgba(245, 171, 53, 1);
+            color: black;
+        }
+
+        .nav-link:hover {
+            cursor: pointer;
+            background-color: rgba(245, 171, 53, 1);
+        }
+        .custom{
+            font-family:'Lucida Handwriting';     
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="row row-no-gutters">
+            <div class="col-6 offset-1">
+                <img src="~/file/flower.jpg" alt="" width="75" height="55" class="mx-2" />
+                <img src="~/file/leaf.jpg" alt="" width="70" height="90" />
+                <span class="font-weight-bold custom">ZIHONG's PERSONAL WEBSITE</span>
+            </div>
+
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm bg-dark border-bottom box-shadow mb-0">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Projects">Projects</a>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <span class="nav-link text-white">About</span>
+                                <div id="about" class="dropdown-content">
+                                    <a href="#">About us</a>
+                                    <a href="#">Contact us</a>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <form id="form1" runat="server">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </form>
+    <hr />
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - PersonalWebsite - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
